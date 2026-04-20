@@ -664,6 +664,8 @@ button:active {
   .gauge-stats { flex-wrap: wrap; gap: 10px; }
   .gauge-stat { flex: 1 1 30%; min-width: 80px; }
 
+  .gauge-log { margin-top: 12px; }
+
   .gauge-input-row { flex-direction: column; }
   #rain-log-btn { width: 100%; }
 
