@@ -648,33 +648,24 @@ button:active {
   .budget-group { flex-direction: column; }
 
   .rain-gauge-section { padding: 24px 16px 0; }
-  .rain-gauge-card { padding: 20px 16px; overflow: hidden; }
+  .rain-gauge-card { padding: 16px; overflow: hidden; }
 
-  .rain-gauge-body { grid-template-columns: 1fr; gap: 24px; }
+  .rain-gauge-body { grid-template-columns: 1fr; gap: 20px; }
 
-  .gauge-visual {
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: center;
-    gap: 16px;
-    padding-left: 40px;
-  }
+  .gauge-visual { flex-direction: column; align-items: center; padding-left: 0; }
 
-  .gauge-marks {
-    right: auto;
-    left: -44px;
-  }
+  .gauge-tube { width: 40px; height: 140px; max-width: 50px; }
 
-  .gauge-tube { width: 48px; height: 160px; }
+  .gauge-marks { position: absolute; right: -35px; font-size: 0.6rem; }
 
-  .gauge-reading { font-size: 1.3rem; }
+  .gauge-reading { font-size: 1.2rem; }
+  .gauge-status { font-size: 0.75rem; text-align: center; }
 
-  .gauge-stats { flex-wrap: nowrap; gap: 8px; }
-  .gauge-stat { flex: 1; padding: 10px 6px; }
-  .gauge-stat span { font-size: 1.1rem; }
+  .gauge-stats { flex-wrap: wrap; gap: 10px; }
+  .gauge-stat { flex: 1 1 30%; min-width: 80px; }
 
-  .gauge-input-row { flex-direction: row; }
-  #rain-log-btn { flex-shrink: 0; }
+  .gauge-input-row { flex-direction: column; }
+  #rain-log-btn { width: 100%; }
 
   #card-container { padding: 16px 16px 40px; gap: 16px; }
 }
