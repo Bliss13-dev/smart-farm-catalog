@@ -11,6 +11,7 @@ body {
   background: #f0f4ee;
   color: #1a2e1b;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* ── Header ── */
@@ -638,43 +639,42 @@ button:active {
 /* ── Mobile Responsive ── */
 @media (max-width: 640px) {
   .title { font-size: 2rem; }
-  .header-stats { gap: 12px; flex-wrap: wrap; }
+  .header-stats { gap: 12px; flex-wrap: wrap; justify-content: center; }
 
   .controls { flex-direction: column; align-items: stretch; padding: 12px 16px; }
   .controls select,
   .controls input[type="number"],
-  .controls button { width: 100%; }
+  .controls button { width: 100%; box-sizing: border-box; }
   .budget-group { flex-direction: column; }
 
   .rain-gauge-section { padding: 24px 16px 0; }
-  .rain-gauge-card { padding: 20px 16px; }
+  .rain-gauge-card { padding: 20px 16px; overflow: hidden; }
 
-  .rain-gauge-body {
-    grid-template-columns: 1fr;
-  }
+  .rain-gauge-body { grid-template-columns: 1fr; gap: 24px; }
 
   .gauge-visual {
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-    gap: 32px;
-    padding-bottom: 8px;
+    gap: 16px;
+    padding-left: 40px;
   }
 
   .gauge-marks {
-    right: -48px;
+    right: auto;
+    left: -44px;
   }
 
-  .gauge-tube {
-    width: 48px;
-    height: 160px;
-  }
+  .gauge-tube { width: 48px; height: 160px; }
 
-  .gauge-stats { flex-wrap: wrap; }
-  .gauge-stat { min-width: calc(33% - 12px); }
+  .gauge-reading { font-size: 1.3rem; }
 
-  .gauge-input-row { flex-direction: column; }
-  #rain-log-btn { width: 100%; justify-content: center; }
+  .gauge-stats { flex-wrap: nowrap; gap: 8px; }
+  .gauge-stat { flex: 1; padding: 10px 6px; }
+  .gauge-stat span { font-size: 1.1rem; }
+
+  .gauge-input-row { flex-direction: row; }
+  #rain-log-btn { flex-shrink: 0; }
 
   #card-container { padding: 16px 16px 40px; gap: 16px; }
 }
