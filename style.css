@@ -647,9 +647,34 @@ button:active {
   .budget-group { flex-direction: column; }
 
   .rain-gauge-section { padding: 24px 16px 0; }
-  .rain-gauge-body { grid-template-columns: 1fr; }
-  .gauge-visual { flex-direction: row; align-items: center; justify-content: center; }
+  .rain-gauge-card { padding: 20px 16px; }
+
+  .rain-gauge-body {
+    grid-template-columns: 1fr;
+  }
+
+  .gauge-visual {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    padding-bottom: 8px;
+  }
+
+  .gauge-marks {
+    right: -48px;
+  }
+
+  .gauge-tube {
+    width: 48px;
+    height: 160px;
+  }
+
   .gauge-stats { flex-wrap: wrap; }
+  .gauge-stat { min-width: calc(33% - 12px); }
+
+  .gauge-input-row { flex-direction: column; }
+  #rain-log-btn { width: 100%; justify-content: center; }
 
   #card-container { padding: 16px 16px 40px; gap: 16px; }
 }
