@@ -1,6 +1,39 @@
-# SEA Stage 2 - Data Catalog Project
+# Smart Farm Catalog
 
-This repository contains the instructions, requirements, and starter code for Stage Two of the Snap Engineering Academy application process.
+## About This Project
+
+My family has managed a small farm for a long time, and one thing I always noticed was how difficult it is to find the right tools without spending hours comparing prices and reviews across different websites. Most agricultural resources are either too technical or aimed at large commercial operations — not the small family farms that make up the majority of food producers.
+
+This project is my attempt to fix that. The Smart Farm Catalog is a filterable, searchable tool guide built specifically for small-scale farming. You can browse by category, sort by price, or enter your budget and get the top 3 highest-efficiency tools you can actually afford.
+
+I also added a Digital Rain Gauge so farmers can log and track daily rainfall readings directly in the app — something I wish we'd had growing up.
+
+## Features
+
+- **Filter by category** — Water, Soil, Pest
+- **Sort by price** — toggles between low→high and high→low
+- **Smart Recommender** — filters by budget, ranks by efficiency, returns top 3
+- **Clear Filters** — resets everything back to the full catalog
+- **Digital Rain Gauge** — log rainfall readings, track totals, averages, and history
+
+## What I Learned
+
+- How to use JavaScript array methods (`.filter()`, `.sort()`, `.slice()`) to manipulate data
+- Why `cloneNode(true)` is cleaner and safer than injecting raw HTML strings
+- How CSS Grid's `repeat(auto-fill, minmax())` creates responsive layouts without media queries
+- How `backdrop-filter: blur()` creates glassmorphism effects (and why the `-webkit-` prefix matters for Safari)
+- The importance of managing state in one place so features don't conflict with each other
+
+## What I'd Add Next
+
+- `localStorage` to persist rain gauge readings across page refreshes
+- A live weather API integration to auto-populate rainfall data by location
+- A search bar for finding tools by name
+- A user-submitted tools section so farmers can contribute their own recommendations
+
+## Built With
+
+Vanilla HTML, CSS, and JavaScript — no frameworks, no libraries.
 
 ---
 

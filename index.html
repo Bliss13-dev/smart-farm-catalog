@@ -1,31 +1,137 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <title>LA TV Shows | Home</title>
-    <meta name="description" content="A Catalog of Shows Set in Los Angeles" />
+    <title>Smart Farm Catalog</title>
+    <meta name="description" content="Smart Farm Tool Catalog" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="scripts.js"></script>
   </head>
 
   <body>
     <header class="main-header">
-      <h1 class="title">LA TV Shows</h1>
+      <div class="header-content">
+        <span class="header-icon">🌱</span>
+        <h1 class="title">Smart Farm Catalog</h1>
+        <p class="subtitle">Discover the best tools to grow smarter, not harder</p>
+        <div class="header-stats">
+          <div class="stat"><span>8</span>Tools</div>
+          <div class="stat"><span>3</span>Categories</div>
+          <div class="stat"><span>$15+</span>Starting From</div>
+        </div>
+      </div>
     </header>
+
+    <div class="controls">
+      <span class="controls-label">Filter</span>
+      <select id="filter" aria-label="Filter tools by category">
+        <option value="all">🌿 All Tools</option>
+        <option value="water">💧 Water</option>
+        <option value="soil">🪱 Soil</option>
+        <option value="pest">🐛 Pest</option>
+      </select>
+      <button id="sort">⬆ Sort by Price</button>
+      <div class="budget-group">
+        <input id="budget" type="number" placeholder="💰 Max budget ($)" aria-label="Maximum budget in dollars">
+        <button id="recommend">✨ Recommend</button>
+      </div>
+      <p class="input-error" id="budget-error"></p>
+      <button id="clear">✕ Clear Filters</button>
+    </div>
+
+    <!-- ── Rain Gauge ── -->
+    <section class="rain-gauge-section">
+      <div class="rain-gauge-card">
+        <div class="rain-gauge-header">
+          <span>🌧️</span>
+          <div>
+            <h2>Digital Rain Gauge</h2>
+            <p>Track daily rainfall for your farm</p>
+          </div>
+        </div>
+
+        <div class="rain-gauge-body">
+          <!-- Visual gauge -->
+          <div class="gauge-visual">
+            <div class="gauge-tube">
+              <div class="gauge-fill" id="gauge-fill"></div>
+              <div class="gauge-marks">
+                <span>100mm</span>
+                <span>75mm</span>
+                <span>50mm</span>
+                <span>25mm</span>
+                <span>0mm</span>
+              </div>
+            </div>
+            <div class="gauge-reading" id="gauge-reading">0 mm</div>
+            <div class="gauge-status" id="gauge-status">No rainfall logged</div>
+          </div>
+
+          <!-- Input + log -->
+          <div class="gauge-controls">
+            <div class="gauge-input-group">
+              <label>Log Rainfall (mm)</label>
+              <div class="gauge-input-row">
+                <input id="rain-input" type="number" min="0" max="100" placeholder="e.g. 12.5" aria-label="Rainfall amount in millimetres">
+                <button id="rain-log-btn">+ Log</button>
+              </div>
+              <p class="input-error" id="rain-error"></p>
+            </div>
+
+            <div class="gauge-stats">
+              <div class="gauge-stat">
+                <span id="total-rain">0</span>
+                <label>Total (mm)</label>
+              </div>
+              <div class="gauge-stat">
+                <span id="avg-rain">0</span>
+                <label>Avg (mm)</label>
+              </div>
+              <div class="gauge-stat">
+                <span id="log-count">0</span>
+                <label>Readings</label>
+              </div>
+            </div>
+
+            <div class="gauge-log">
+              <div class="gauge-log-header">
+                <span>📋 History</span>
+                <button id="rain-clear-btn">Clear</button>
+              </div>
+              <ul id="rain-log-list"><li class="log-empty">No readings yet</li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <p class="section-heading">Browse Tools</p>
+    <!-- CSS Grid with auto-fill and minmax lets the cards reflow naturally
+         at any screen size without needing media queries for every breakpoint -->
     <div id="card-container"></div>
+
+    <!-- Hidden template card -->
     <div class="card" style="display: none">
+      <div class="card-image-wrap">
+        <img src="" alt="" />
+        <span class="card-badge"></span>
+      </div>
       <div class="card-content">
-        <h2>TV Show Title</h2>
-        <img src="" alt="TV Show Poster" />
-        <ul>
-          <li>Bullet Point 1</li>
-          <li>Bullet Point 2</li>
-          <li>Bullet Point 3</li>
-        </ul>
+        <h2></h2>
+        <ul></ul>
+        <div class="efficiency-bar-wrap">
+          <div class="efficiency-label">Efficiency</div>
+          <div class="efficiency-bar">
+            <div class="efficiency-fill" style="width: 0%"></div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="footer">
-      <button onclick="quoteAlert()">Get A Quote!</button>
-      <button onclick="removeLastCard()">Remove A Card!</button>
-    </div>
+
+    <footer class="main-footer">
+      🌾 Smart Farm Catalog &mdash; Growing better, together.
+    </footer>
+    <script src="scripts.js"></script>
   </body>
 </html>
